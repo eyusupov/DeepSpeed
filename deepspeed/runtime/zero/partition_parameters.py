@@ -870,7 +870,7 @@ class Init(InsertPostInitMethodToModuleSubClasses):
             param.all_gather()
             return param._orig_item()
 
-        def ds_summary(slf: torch.Tensor, use_debug_name: bool = False) -> dict:
+        def ds_summary(slf: torch.Tensor, use_debug_name: bool = True) -> dict:
             return {
                 "id": debug_param2name_id(slf) if use_debug_name else slf.ds_id,
                 "status": slf.ds_status.name,
